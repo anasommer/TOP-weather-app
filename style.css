@@ -8,8 +8,7 @@ body {
   background: url('/img/bg.jpg') no-repeat center center/cover;
   width: 100vw;
   height: 100vh;
-  top: 0;
-  left: 0;
+  font-family: 'Dosis', sans-serif;
 }
 
 .container {
@@ -20,4 +19,5 @@ body {
   text-align: center;
   color: #fff;
   background: rgba(0, 151, 148, 0.177);
+  border-radius: 4px;
 }
