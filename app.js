@@ -4,11 +4,29 @@ const weatherEl = document.querySelector('.weather-container');
 const btn = document.querySelector('#btn');
 const form = document.querySelector('form');
 
-async function getWeather(city) {
-  const response = await fetch(`${apiUrl}${city}`);
-  const weatherData = await response.json();
+function createHtml(data) {
+  const name = data.location.name;
+  const { temp_c, temp_f } = data.current;
 
-  console.log(weatherData);
+  const h2 = document.createElement('h2');
+  h2.textContent = name;
+
+  const celsius = document.createElement('p');
+  celsius.textContent = temp_c;
+
+  weatherEl.append(h2, celsius);
+  return weatherEl;
+}
+
+async function getWeather(city) {
+  try {
+    const response = await fetch(`${apiUrl}${city}`);
+    const weatherData = await response.json();
+    createHtml(weatherData);
+    console.log(weatherData);
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 form.addEventListener('submit', (e) => {
