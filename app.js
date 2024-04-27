@@ -7,14 +7,24 @@ const form = document.querySelector('form');
 function createHtml(data) {
   const name = data.location.name;
   const { temp_c, temp_f } = data.current;
+  const { text, icon } = data.current.condition;
 
   const h2 = document.createElement('h2');
   h2.textContent = name;
 
   const celsius = document.createElement('p');
-  celsius.textContent = temp_c;
+  celsius.textContent = `°C: ${temp_c}°`;
 
-  weatherEl.append(h2, celsius);
+  const fahr = document.createElement('p');
+  fahr.textContent = `°F: ${temp_f}°`;
+
+  const iconImg = document.createElement('img');
+  iconImg.src = icon;
+
+  const textEl = document.createElement('p');
+  textEl.textContent = text;
+
+  weatherEl.append(h2, celsius, fahr, iconImg, textEl);
   return weatherEl;
 }
 
@@ -30,8 +40,10 @@ async function getWeather(city) {
 }
 
 form.addEventListener('submit', (e) => {
+  weatherEl.innerHTML = '';
   e.preventDefault();
   const city = document.querySelector('#city').value;
   console.log(city);
   getWeather(city);
+  form.reset();
 });
