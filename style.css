@@ -8,4 +8,16 @@ body {
   background: url('/img/bg.jpg') no-repeat center center/cover;
   width: 100vw;
   height: 100vh;
+  top: 0;
+  left: 0;
+}
+
+.container {
+  max-width: 900px;
+  padding-top: 50px;
+  height: 50vh;
+  margin: 100px auto;
+  text-align: center;
+  color: #fff;
+  background: rgba(0, 151, 148, 0.177);
 }
