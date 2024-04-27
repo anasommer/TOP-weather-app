@@ -18,12 +18,8 @@ body {
   margin: 100px auto;
   text-align: center;
   color: #fff;
-  background: rgba(0, 151, 148, 0.101);
+  background: rgba(9, 24, 24, 0.322);
   border-radius: 4px;
-}
-
-.container h1 {
-  font-size: 3rem;
 }
 
 #city,
@@ -54,8 +50,9 @@ body {
 }
 
 .weather-container h2 {
-  text-decoration: underline;
   margin: 2rem 4rem;
-  text-align: left;
+
   font-size: 2rem;
+  color: rgb(229, 227, 229);
+  text-shadow: 2px 3px black;
 }
